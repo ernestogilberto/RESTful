@@ -48,7 +48,7 @@ class Contenedor {
         await fs.promises.writeFile(path, JSON.stringify(products, null, 2))
       }
 
-      return {status: 'success', message: `Product Added successfully wit id: ${product.id}`}
+      return {status: 'success', payload: product}
     } catch (e) {
       return {status: 'error', error: e}
     }

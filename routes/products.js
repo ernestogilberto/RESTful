@@ -23,6 +23,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   let product = req.body;
+  product.price = parseFloat(product.price);
   products.push(product)
   res.send(await manager.save(product).then(r=> (r.payload)))
 })
